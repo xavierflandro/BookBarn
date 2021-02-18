@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+@model IQueryable<Book>
+<header>
+    <h1>Book Barn</h1>
+</header>
+
+<br />
+<br />
+
+<table class="table table-bordered table-striped table-sm">
+    <thead>
+        <tr><th>ID</th><th>Title</th><th>Author</th><th>Publisher</th><th>ISBN</th><th>Categories</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.BookId</td>
+                <td>@b.Title</td>
+                <td>@b.AuthorFirst @b.AuthorMiddle @b.AuthorLast</td>
+                <td>@b.Publisher</td>
+                <td>@b.ISBN</td>
+                <td>@b.CategoryPrim, @b.CategorySec</td>
+                <td>$@b.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<div asp-validation-summary="All">
+    
+</div>
+
