@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace BookBarn.Models
 {
+    //  inherit from dbcontext
     public class BookDBContext : DbContext
     {
+        //  pass dboptions which inherit from base options
         public BookDBContext (DbContextOptions<BookDBContext> options) : base (options)
         {
 

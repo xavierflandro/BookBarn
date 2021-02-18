@@ -8,6 +8,7 @@ namespace BookBarn.Models
 {
     public class Book
     {
+        //  indicate the primary key
         [Key]
         [Required]
         public int BookId { get; set; }

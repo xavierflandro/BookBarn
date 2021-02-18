@@ -16,11 +16,13 @@ namespace BookBarn.Models
 
             if (context.Database.GetPendingMigrations().Any())
             {
+                //  migrate if there are migrations to be made
                 context.Database.Migrate();
             }
 
             if (!context.Books.Any())
             {
+                //  add initial book objects to context if none present
                 context.Books.AddRange(
 
                     new Book

@@ -7,6 +7,7 @@ namespace BookBarn.Models
 {
     public interface IBooksRepository
     {
+        //  create queryable object of book objects
         IQueryable<Book> Books { get; }
     }
 }

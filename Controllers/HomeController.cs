@@ -23,6 +23,7 @@ namespace BookBarn.Controllers
 
         public IActionResult Index()
         {
+            //  check for validationd
             if (ModelState.IsValid)
             {
                 return View(_repository.Books);
