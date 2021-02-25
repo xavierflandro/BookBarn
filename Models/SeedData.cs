@@ -35,6 +35,7 @@ namespace BookBarn.Models
                         ISBN = "978-0451419439",
                         CategoryPrim = "Fiction",
                         CategorySec = "Classic",
+                        NumPages = 1488,
                         Price = 9.95
                     },
 
@@ -48,6 +49,7 @@ namespace BookBarn.Models
                         ISBN = "978-0743270755",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Biography",
+                        NumPages = 944,
                         Price = 14.58
                     },
 
@@ -61,6 +63,7 @@ namespace BookBarn.Models
                         ISBN = "978-0553384611",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Biography",
+                        NumPages = 832,
                         Price = 21.54
                     },
 
@@ -74,6 +77,7 @@ namespace BookBarn.Models
                         ISBN = "978-0812974492",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Biography",
+                        NumPages = 864,
                         Price = 11.61
                     },
 
@@ -87,6 +91,7 @@ namespace BookBarn.Models
                         ISBN = "978-0812974492 ",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Historical",
+                        NumPages = 528,
                         Price = 13.33
                     },
 
@@ -100,6 +105,7 @@ namespace BookBarn.Models
                         ISBN = "978-0804171281",
                         CategoryPrim = "Fiction",
                         CategorySec = "Historical Fiction",
+                        NumPages = 288,
                         Price = 15.95
                     },
 
@@ -113,6 +119,7 @@ namespace BookBarn.Models
                         ISBN = "978-1455586691",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Self-Help",
+                        NumPages = 304,
                         Price = 14.99
                     },
 
@@ -126,6 +133,7 @@ namespace BookBarn.Models
                         ISBN = "978-1455523023",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Self-Help",
+                        NumPages = 240,
                         Price = 21.66
                     },
 
@@ -139,6 +147,7 @@ namespace BookBarn.Models
                         ISBN = "978-1591847984",
                         CategoryPrim = "Non-Fiction",
                         CategorySec = "Business",
+                        NumPages = 400,
                         Price = 29.16
                     },
 
@@ -152,7 +161,50 @@ namespace BookBarn.Models
                         ISBN = "978-0553393613",
                         CategoryPrim = "Fiction",
                         CategorySec = "Thrillers",
+                        NumPages = 642,
                         Price = 15.03
+                    },
+
+                    new Book
+                    {
+                        Title = "How To Win Friends and Influence People",
+                        AuthorFirst = "Dale",
+                        AuthorMiddle = "",
+                        AuthorLast = "Carnegie",
+                        Publisher = "Simon and Schuster",
+                        ISBN = "9781442344815",
+                        CategoryPrim = "Non-Fiction",
+                        CategorySec = "Self-Help",
+                        NumPages = 291,
+                        Price = 11.85
+                    },
+
+                    new Book
+                    {
+                        Title = "Rich Dad Poor Dad",
+                        AuthorFirst = "Robert",
+                        AuthorMiddle = "T.",
+                        AuthorLast = "Kiyosaki",
+                        Publisher = "Warner Books Ed",
+                        ISBN = "978-1469202167",
+                        CategoryPrim = "Non-Fiction",
+                        CategorySec = "Business",
+                        NumPages = 336,
+                        Price = 11.29
+                    },
+
+                    new Book
+                    {
+                        Title = "The Richest Man in Babylon",
+                        AuthorFirst = "George",
+                        AuthorMiddle = "S.",
+                        AuthorLast = "Clason",
+                        Publisher = "Penguin Books",
+                        ISBN = "978-0451205360",
+                        CategoryPrim = "Fiction",
+                        CategorySec = "Business",
+                        NumPages = 144,
+                        Price = 10.95
                     }
                 );
 
