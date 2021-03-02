@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+    
+<!--Sets up a home link-->
+    <a class="btn btn-block btn-outline-secondary"
+       asp-action="Index" asp-controller="Home" 
+       asp-route-category="">
+        Home
+    </a>
+
+<!--For each category in the model, create a link with innerHTML-->
+    <div class="">
+        @foreach (string category in Model)
+        {
+            <a class="btn btn-block btn-outline-secondary @(category == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")"
+               asp-action="Index" asp-controller="Home"
+               asp-route-category="@category"
+               asp-route-page="1">
+                @category
+            </a>
+        }
+    </div>

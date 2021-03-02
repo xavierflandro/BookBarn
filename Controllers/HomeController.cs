@@ -26,7 +26,7 @@ namespace BookBarn.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             //  check for validation
             if (ModelState.IsValid)
@@ -34,18 +34,22 @@ namespace BookBarn.Controllers
                 return View(new ProjectListViewModel
                 {
                     Books = _repository.Books
-                        .OrderBy(p => p.BookId)          // Order by BookId
-                        .Skip((page - 1) * PageSize)    // Skip to third element (element 2)
-                        .Take(PageSize)                 // Set items per page
+                        .Where(b => category == null || b.SubCategory == category)  // Filters by either all books when category is null or by books where CategorySec == non-null category
+                        .OrderBy(b => b.BookId)                                     // Order by BookId
+                        .Skip((page - 1) * PageSize)                                // Skip to third element (element 2)
+                        .Take(PageSize)                                             // Set items per page
                     ,
                     // set paging info
                     PagingInfo = new PagingInfo
                     {
                         CurrentPage = page,
                         ItemsPerPage = PageSize,
-                        TotalNumItems = _repository.Books.Count()
-                    }
-                });
+                        TotalNumItems = category == null ?                              //  if null, TotalNumItems will equal count of all book else count of books with matching subcategory
+                        _repository.Books.Count() :
+                        _repository.Books.Where(x => x.SubCategory == category).Count()
+                    },
+                    CurrentCategory = category          // set current category to first parameter
+                }); ;
             }
             else
             {

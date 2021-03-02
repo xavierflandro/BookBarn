@@ -37,11 +37,7 @@ namespace BookBarn.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryPrim")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CategorySec")
+                    b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -56,6 +52,10 @@ namespace BookBarn.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("Publisher")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubCategory")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

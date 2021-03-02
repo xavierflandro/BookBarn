@@ -28,6 +28,9 @@ namespace WaterProject.Infrastructure
 
         public string PageAction { get; set; }
 
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]    //  configures the dictionary to store any new attribute using the defined prefix
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();   // instantiates dictionary object
+
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -45,7 +48,10 @@ namespace WaterProject.Infrastructure
             {
                 //  set href attribute and innerhtml of a tag
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction,
+                    PageUrlValues);
 
                 if (PageClassesEnabled)
                 {

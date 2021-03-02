@@ -2,7 +2,7 @@
 
 namespace BookBarn.Migrations
 {
-    public partial class Update1 : Migration
+    public partial class AlteredFields : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,8 +18,8 @@ namespace BookBarn.Migrations
                     AuthorLast = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryPrim = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategorySec = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SubCategory = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
                     NumPages = table.Column<int>(type: "int", nullable: false)
                 },

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookBarn.Migrations
 {
     [DbContext(typeof(BookDBContext))]
-    [Migration("20210225051222_Update1")]
-    partial class Update1
+    [Migration("20210302042247_AlteredFields")]
+    partial class AlteredFields
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,11 +39,7 @@ namespace BookBarn.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryPrim")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CategorySec")
+                    b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -58,6 +54,10 @@ namespace BookBarn.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("Publisher")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubCategory")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

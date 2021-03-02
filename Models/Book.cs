@@ -32,10 +32,10 @@ namespace BookBarn.Models
         public string ISBN { get; set; }
 
         [Required]
-        public string CategoryPrim { get; set; }
+        public string Category { get; set; }
 
         [Required]
-        public string CategorySec { get; set; }
+        public string SubCategory { get; set; }
 
         [Required]
         public double Price { get; set; }

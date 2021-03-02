@@ -57,8 +57,19 @@ namespace BookBarn
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    "pagination",
+                endpoints.MapControllerRoute("categorypage",                //  endpoint for when category and page provided
+                    "{category}/{page:int}",
+                    new { Controller = "Home", Action = "Index" });
+
+                endpoints.MapControllerRoute("page",                        //  endpoint for when page provided
+                    "{page:int}",
+                    new { Controller = "Home", Action = "Index" });
+
+                endpoints.MapControllerRoute("category",                    //  endpoint for when category provided
+                    "{category}",
+                    new { Controller = "Home", Action = "Index", page = 1 });
+
+                endpoints.MapControllerRoute("pagination",                  //  endpoint for when page provided after /Books/
                     "Books/P{page}",
                     new { Controller = "Home", action = "Index" });
 
