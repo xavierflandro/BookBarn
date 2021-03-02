@@ -1,0 +1,12 @@
+﻿@model Book
+
+<tr>
+    <td>@Model.BookId</td>
+    <td>@Model.Title</td>
+    <td>@Model.AuthorFirst @Model.AuthorMiddle @Model.AuthorLast</td>
+    <td>@Model.Publisher</td>
+    <td>@Model.ISBN</td>
+    <td>@Model.CategoryPrim, @Model.CategorySec</td>
+    <td>@Model.NumPages</td>
+    <td>$@Model.Price</td>
+</tr>

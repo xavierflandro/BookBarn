@@ -38,6 +38,7 @@ namespace BookBarn.Controllers
                         .Skip((page - 1) * PageSize)    // Skip to third element (element 2)
                         .Take(PageSize)                 // Set items per page
                     ,
+                    // set paging info
                     PagingInfo = new PagingInfo
                     {
                         CurrentPage = page,

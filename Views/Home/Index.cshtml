@@ -15,16 +15,7 @@
     <tbody>
         @foreach (var b in Model.Books)
         {
-            <tr>
-                <td>@b.BookId</td>
-                <td>@b.Title</td>
-                <td>@b.AuthorFirst @b.AuthorMiddle @b.AuthorLast</td>
-                <td>@b.Publisher</td>
-                <td>@b.ISBN</td>
-                <td>@b.CategoryPrim, @b.CategorySec</td>
-                <td>@b.NumPages</td>
-                <td>$@b.Price</td>
-            </tr>
+            <partial name="BookSummary" model="b" />
         }
     </tbody>
 </table>
