@@ -29,7 +29,7 @@ namespace BookBarn
 
             services.AddDbContext<BookDBContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:BookBarnConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:BookBarnConnection"]);
            });
 
             services.AddScoped<IBooksRepository, EFBooksRepository>();
