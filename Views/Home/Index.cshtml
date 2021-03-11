@@ -10,7 +10,7 @@
                             and 'shadow' and 'rounded' to add a shadow to a div on the _layout razor page-->
 <table class="table table-bordered table-striped table-sm">
     <thead class="thead-dark">
-        <tr><th >ID</th><th>Title</th><th>Author</th><th>Publisher</th><th>ISBN</th><th>Categories</th><th>Pages</th><th>Price</th></tr>
+        <tr><th >ID</th><th>Title</th><th>Author</th><th>Publisher</th><th>ISBN</th><th>Categories</th><th>Pages</th><th>Price</th><th class="text-right">Add To Cart</th></tr>
     </thead>
     <tbody>
         @foreach (var b in Model.Books)

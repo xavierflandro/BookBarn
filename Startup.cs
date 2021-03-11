@@ -33,6 +33,11 @@ namespace BookBarn
            });
 
             services.AddScoped<IBooksRepository, EFBooksRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +55,9 @@ namespace BookBarn
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            //  Sets up session 
+            app.UseSession();
 
             app.UseRouting();
 
@@ -74,6 +82,8 @@ namespace BookBarn
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();                                  //  lets routes be named after razor pages
             });
 
             SeedData.EnsurePopulated(app);
