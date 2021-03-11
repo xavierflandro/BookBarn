@@ -26,7 +26,7 @@ namespace BookBarn.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = ReturnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
         }
 
         //Methods
@@ -34,11 +34,11 @@ namespace BookBarn.Pages
         {
             Book book = repository.Books.FirstOrDefault(predicate => predicate.BookId == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
 
             Cart.AddItem(book, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            HttpContext.Session.SetJson("Cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }

@@ -1,8 +1,8 @@
 ﻿@model Cart
-<div class="">
+<div class="ml-5 pl-5" style="float:right;">
     @if (Model.Lines.Count() > 0)
     {
-        <small class="navbar-text">
+        <small class="navbar-text text-white ml-5 pl-5">
             <b>Your cart:</b>
             @Model.Lines.Sum(x => x.Quantity) item(s)
             @Model.ComputeTotalSum().ToString("c")
@@ -10,7 +10,7 @@
     }
 <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/Cart"
    asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
-    <img src="~/img/cart.png" />
+    <img src="~/img/cart.png" width="20"/>
     <!--<i class="fa fa-shopping-cart"></i>-->
 </a>
 </div>

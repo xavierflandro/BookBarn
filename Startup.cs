@@ -1,6 +1,7 @@
 using BookBarn.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,7 @@ namespace BookBarn
         }
 
         public IConfiguration Configuration { get; set; }
+        public object SessionCart { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -38,6 +40,9 @@ namespace BookBarn
 
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Cart>(Span => Models.SessionCart.GetCart(Span));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

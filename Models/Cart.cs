@@ -10,7 +10,7 @@ namespace BookBarn.Models
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
         /*ADD*/
-        public void AddItem(Book b, int qty)
+        public virtual void AddItem(Book b, int qty)
         {
             //  Set line variable to line from Lines where bookId == passed bookId
             CartLine line = Lines
@@ -33,9 +33,9 @@ namespace BookBarn.Models
             }
         }
         /*REMOVE*/
-        public void RemoveLine(Book book) => Lines.RemoveAll(x => x.Book.BookId == book.BookId);
+        public virtual void RemoveLine(Book book) => Lines.RemoveAll(x => x.Book.BookId == book.BookId);
         /*CLEAR*/
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
         /*TOTAL*/
         public decimal ComputeTotalSum() => (decimal)Lines.Sum(e => e.Book.Price * e.Quantity);    
 
